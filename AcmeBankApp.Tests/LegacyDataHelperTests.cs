@@ -1,5 +1,6 @@
 using System;
 using System.Data;
+using Microsoft.Data.SqlClient;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AcmeBankApp.Data;
 
@@ -150,9 +151,9 @@ namespace AcmeBankApp.Tests
         {
             // Arrange
             string sql = "SELECT * FROM Users WHERE UserName = @UserName";
-            var parameters = new System.Data.SqlClient.SqlParameter[]
+            var parameters = new SqlParameter[]
             {
-                new System.Data.SqlClient.SqlParameter("@UserName", "demo")
+                new SqlParameter("@UserName", "demo")
             };
 
             // Act
